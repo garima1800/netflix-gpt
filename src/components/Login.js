@@ -1,7 +1,7 @@
 import Header from "./Header";
 import { useState, useRef } from "react";
 import { checkValidateData } from "./utils/validate";
-import { useNavigate } from "react-router-dom";
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -15,7 +15,7 @@ const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const displayName = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -57,7 +57,7 @@ const Login = () => {
                 })
               );
               
-              navigate("/browse");
+              // navigate("/browse");
               // Profile updated!
               // ...
             })
@@ -87,8 +87,8 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+          // console.log(user);
+          // navigate("/browse");
           // ...
         })
         .catch((error) => {
